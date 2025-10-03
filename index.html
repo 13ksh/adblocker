@@ -12,32 +12,64 @@
       align-items: center;
       height: 100vh;
     }
+
     .download-btn {
       background: #4CAF50;
       color: white;
-      padding: 15px 30px;
+      padding: 15px 40px;
       font-size: 18px;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .download-btn:hover {
-      background: #45a049;
+
+    .download-btn.circle {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      font-size: 0;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      font-size: 28px;
+      opacity: 0;
+      transition: all 0.4s ease;
+      color: white;
+    }
+
+    .download-btn.show-check .checkmark {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <button class="download-btn" onclick="downloadFile()">📥 super ultra ad blocker pro max unlimite V2.zip 파일 다운로드</button>
+  <button class="download-btn" onclick="downloadFile(this)">
+    download
+    <span class="checkmark">✔</span>
+  </button>
 
   <script>
-    function downloadFile() {
-      // GitHub Pages에 올라간 "gAME" 파일 경로
-      const fileUrl = "super ultra ad blocker pro max unlimite V2.zip"; // 같은 디렉토리에 있다면 이렇게만 써도 됨
+    function downloadFile(btn) {
+      // 파일 다운로드
       const link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "super ultra ad blocker pro max unlimite V2.zip"; // 다운로드될 때 파일 이름
+      link.href = "gAME"; // 같은 디렉토리에 gAME 파일 있다고 가정
+      link.download = "gAME";
       link.click();
+
+      // 버튼 애니메이션
+      btn.classList.add("circle");
+      setTimeout(() => {
+        btn.classList.add("show-check");
+      }, 500);
     }
   </script>
 </body>
