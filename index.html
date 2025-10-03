@@ -2,15 +2,19 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>super ultra ad blocker pro max unlimite V2 다운로드</title>
+  <title>다운로드 & 설치 안내</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #ffffff;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
     }
 
     .download-btn {
@@ -49,6 +53,21 @@
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
+
+    .instructions {
+      margin-top: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+      width: 2560px;
+      max-width: calc(100% - 40px);
+    }
+
+    .instructions.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
   </style>
 </head>
 <body>
@@ -57,19 +76,35 @@
     <span class="checkmark">✔</span>
   </button>
 
+  <div class="instructions" id="instructions">
+    <h1>📦 설치 방법</h1>
+    <h2>
+      1. 위의 gorilla adblocker 파일을 다운로드하세요.<br>
+      2. gorilla adblocker 파일을 원하는 위치에 압축 해제하세요.<br>
+      3. Chrome 브라우저를 열고, 주소창에 chrome://extensions 를 입력하세요.<br>
+      4. 우측 상단의 개발자 모드 토글을 활성화하세요.<br>
+      5. 압축해제된 확장 프로그램 폴더를 드래그하여 확장 프로그램 페이지에 놓으세요.<br>
+      6. 확장 프로그램이 추가되면, 아이콘을 클릭하여 설정을 완료하세요.<br>
+      7. 광고 없는 웹 환경을 즐기세요
+    </h2>
+
   <script>
+
     function downloadFile(btn) {
       // 파일 다운로드
       const link = document.createElement("a");
-      link.href = "gAME"; // 같은 디렉토리에 gAME 파일 있다고 가정
-      link.download = "gAME";
+      link.href = "gorilla adblocker V2.zip";
+      link.download = "gorilla adblocker V2.zip";
       link.click();
 
       // 버튼 애니메이션
       btn.classList.add("circle");
+      setTimeout(() => btn.classList.add("show-check"), 500);
+
+      // 설치방법 표시
       setTimeout(() => {
-        btn.classList.add("show-check");
-      }, 500);
+        document.getElementById("instructions").classList.add("show");
+      }, 1200);
     }
   </script>
 </body>
