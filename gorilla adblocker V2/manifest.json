@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Super Ultra Mega Hyper Extreme Turbo Ultimate Galaxy Quantum Cosmic Godlike Infinity Overdrive Titanium Platinum Diamond Nuclear Apocalypse Apocalypse Pro Max Unlimited Deluxe Supreme Legendary Alpha Omega Zero One Million Lightyear Ad Blocker Eliminator Exterminator Destroyer Vanquisher Obliterator Oblivion Eternal Everlasting Immortal Hyperdrive WarpSpeed Lightsaber Dragonfire Phoenix Mode Chaos Absolute Unbreakable Invincible Indestructible Annihilator Doomsday Ragnarok Armageddon InfinityStorm HyperBlast MetaWorld MultiVerse OmniVerse GigaVerse NanoVerse QuantumVerse FinalBoss CheatCode DebugMode CriticalHit UltraKill UltraCombo PerfectVictory AdVanish Supreme Hyper Ultra Mega Pro Max Unlimited UltraDeluxe DoublePlusExtra InfinityEdition GlobalChampion WorldChampion CosmicChampion UltraSupremeHyperUltimate adblocker",
+    "version": "2.0",
+    "description": "모든 광고 요소 찾아서 찢어 갈겨버리는 나혼자 쓸걸 했던 확장프로그램이다 이말이야",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "permissions": [
+        "storage",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["index.js"],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ]
+}
